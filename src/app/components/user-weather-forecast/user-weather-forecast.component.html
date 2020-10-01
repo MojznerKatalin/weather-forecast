@@ -1,0 +1,31 @@
+<div *ngIf="isUserLoggedIn === false">
+    <app-login (isUserLoggedIn)="login($event)" (user)="setUserData($event)"></app-login>
+</div>
+<div *ngIf="isUserLoggedIn !== false">
+    <div class="button-flex-container">
+        <button mat-flat-button color="primary" class="button"
+            (click)="logout()">{{'userWeatherForecast.logoutButton' | translate}}({{user}})</button>
+    </div>
+    <mat-tab-group [(selectedIndex)]="selectedIndex">
+        <mat-tab *ngFor="let userCity of userCities; let index = index" [label]="userCity | cityName">
+            <ng-template matTabContent>
+                <div class="button-flex-container">
+                    <button mat-flat-button color="primary" class="button" (click)="removeCity(index)"
+                        matTooltip="{{'userWeatherForecast.removeButton' | translate}}">
+                        <span class="material-icons">
+                            delete_forever
+                        </span>
+                    </button>
+                </div>
+                <app-city-weather-forecast [city]="userCity"></app-city-weather-forecast>
+            </ng-template>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <button mat-icon-button (click)="addNewCity()">
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>

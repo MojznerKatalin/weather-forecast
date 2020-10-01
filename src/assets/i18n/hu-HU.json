@@ -1,0 +1,52 @@
+{
+    "login": {
+        "weatherForecast": "Időjárás előrejelzés",
+        "userName": "Felhasználónév",
+        "userPassword": "Jelszó",
+        "loginButton": "Belépés/Regisztráció",
+        "wrongLoginData": "Hibás jelszó!"
+    },
+    "userWeatherForecast": {
+        "logoutButton": "Kilépés",
+        "removeButton": "Törlés"
+    },
+    "addNewCity": {
+        "header": "Kérem adja meg a várost!",
+        "city": "Város",
+        "close": "Mégsem",
+        "save": "Hozzáadás"
+    },
+    "cityWeatherForecast": {
+        "daily": "Aktuális időjárás",
+        "fiveDaysForecast": "5 napos előrejelzés",
+        "temperature": "Hőmérséklet:",
+        "humidity": "Páratartalom:",
+        "airPressure": "Légnyomás:",
+        "windDeg": "Szélirány:",
+        "windSpeed": "Szélerősség:",
+        "N": "É",
+        "NNE": "ÉÉK",
+        "NE": "ÉK",
+        "ENE": "KÉK",
+        "E": "K",
+        "ESE": "KDK",
+        "SE": "DK",
+        "SSE": "DDK",
+        "S": "D",
+        "SSW": "DDNy",
+        "SW": "DNY",
+        "WSW": "NyDNy",
+        "W": "NY",
+        "WNW": "NyÉNy",
+        "NW": "ÉNY",
+        "NNW": "ÉÉNy",
+        "metric": {
+            "celsius": "°C",
+            "percent": "%",
+            "hectoPascal": "hPa",
+            "speed": "km/h"
+        },
+        "xAxisLabel": "Időpont",
+        "yAxisLabel": "Hőmérséklet °C"
+    }
+}

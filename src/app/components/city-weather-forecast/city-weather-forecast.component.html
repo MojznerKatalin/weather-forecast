@@ -1,0 +1,59 @@
+<div class="login-form-flex">
+    <mat-card fxFlex>
+        <mat-card-title class="purple">
+            {{'cityWeatherForecast.daily' | translate}}
+        </mat-card-title>
+        <br />
+        <mat-card-content class="mat-card-content">
+            <div class="row">
+                <div class="column purple">
+                    <label>{{'cityWeatherForecast.temperature' | translate}} </label>
+                    <b>{{temperature}}{{'cityWeatherForecast.metric.celsius' | translate}} </b>
+                </div>
+                <div class="column purple">
+                    <label>{{'cityWeatherForecast.humidity' | translate}} </label>
+                    <b>{{humidity}}{{'cityWeatherForecast.metric.percent' | translate}} </b>
+                </div>
+                <div class="column purple">
+                    <label>{{'cityWeatherForecast.airPressure' | translate}} </label>
+                    <b>{{airPressure}} {{'cityWeatherForecast.metric.hectoPascal' | translate}} </b>
+                </div>
+                <div class="column purple">
+                    <label>{{'cityWeatherForecast.windSpeed' | translate}} </label>
+                    <b>{{windSpeed}} {{'cityWeatherForecast.metric.speed' | translate}} </b>
+                </div>
+                <div class="column purple">
+                    <label>{{'cityWeatherForecast.windDeg' | translate}} </label>
+                    <b>{{windDeg}}</b>
+                </div>
+            </div>
+        </mat-card-content>
+        <br />
+        <mat-card-title class="purple">
+            {{'cityWeatherForecast.fiveDaysForecast' | translate}}
+        </mat-card-title>
+        <br />
+        <mat-card-content class="mat-card-content chart-size">
+            <ngx-charts-line-chart 
+                [scheme]="colorScheme" 
+                [legend]="legend" 
+                [legendTitle]="legendTitle"
+                [showXAxisLabel]="showXAxisLabel" 
+                [showYAxisLabel]="showYAxisLabel" 
+                [xAxis]="xAxis" 
+                [yAxis]="yAxis"
+                [autoScale]="autoScale" 
+                xAxisLabel="{{'cityWeatherForecast.xAxisLabel' | translate}}"
+                yAxisLabel="{{'cityWeatherForecast.yAxisLabel' | translate}}" 
+                [timeline]="timeline"
+                [results]="forecastData">
+                <ng-template #tooltipTemplate let-model="model">
+                    {{ !!model ? model.extra.tooltip : "" }}
+                </ng-template>
+                <ng-template #seriesTooltipTemplate let-model="model">
+                    {{ !!model[0] ? model[0].extra.tooltip: "" }}
+                </ng-template>
+            </ngx-charts-line-chart>
+        </mat-card-content>
+    </mat-card>
+</div>

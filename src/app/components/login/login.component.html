@@ -1,0 +1,29 @@
+<div class="login-form-flex">
+  <mat-card>
+    <mat-card-title class="purple">
+      {{'login.weatherForecast' | translate}}
+    </mat-card-title>
+    <br />
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'login.userName' | translate}}</mat-label>
+        <input [(ngModel)]="userName" matInput placeholder="{{'login.userName' | translate}}" />
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>{{'login.userPassword' | translate}}</mat-label>
+        <input [(ngModel)]="userPassword" type="password" matInput placeholder="{{'login.userPassword' | translate}}" />
+      </mat-form-field>
+      <div *ngIf="!!isAccessDenied" class="purple">
+        <br />
+        {{'login.wrongLoginData' | translate}}
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="button-flex-container">
+        <button mat-flat-button color="primary" [disabled]="!userName || !userPassword"
+          (click)="userLogin()">{{'login.loginButton' | translate}}</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

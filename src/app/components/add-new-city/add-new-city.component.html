@@ -1,0 +1,14 @@
+<h2 mat-dialog-title class="purple">{{'addNewCity.header' | translate}}</h2>
+
+<mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>{{'addNewCity.city' | translate}}</mat-label>
+        <input [(ngModel)]="newCity" matInput placeholder="{{'addNewCity.city' | translate}}" />
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-flat-button color="primary" (click)="close()">{{'addNewCity.close' | translate}}</button>
+    <button mat-flat-button color="primary" [disabled]="!newCity"
+        (click)="save()">{{'addNewCity.save' | translate}}</button>
+</mat-dialog-actions>
